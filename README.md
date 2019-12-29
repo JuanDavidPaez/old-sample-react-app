@@ -33,6 +33,13 @@ npm install @types/styled-components
 npm install --save styled-icons
 ```
 
+#### React router [link](https://reacttraining.com/react-router/web/guides/quick-start)
+
+```
+npm install react-router-dom
+npm install @types/react-router-dom
+```
+
 ## Setup and useful commands
 
 #### Create app
@@ -69,3 +76,7 @@ tsconfig.json
 > ```javascript
 > "noImplicitAny": true,
 > ```
+
+## Other useful resources
+
+https://github.com/Lemoncode/react-promise-tracker
