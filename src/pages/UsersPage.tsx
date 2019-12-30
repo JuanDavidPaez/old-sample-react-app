@@ -1,19 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Container, Button } from "react-bootstrap";
 import userService from "services/UsersService";
+import { IUser } from "models/UsersModels";
+import UsersTable from "components/UsersTable";
 
 const UsersPage: React.FC = () => {
+
+  const [users, setUsers] = useState<IUser[]>([]);
+  const isMounted = useRef(false);
+
   useEffect(() => {
+    isMounted.current = true;
     loadAllUsersFromApi();
+    return () => {
+      isMounted.current = false;
+    }
   }, []);
 
-  const loadAllUsersFromApi = async () => {
-    const usersPromise = userService.GetUsers();
-    let users: any = {};
-    await usersPromise.then(data => {
-      users = data;
-    });
-    console.log("jaja", users);
+  const loadAllUsersFromApi = () => {
+    setUsers([]);
+    userService.GetUsers()
+      .then(usersData => {
+        if (isMounted.current) {
+          setUsers(usersData);
+        }
+      });
   };
 
   return (
@@ -24,6 +35,9 @@ const UsersPage: React.FC = () => {
         <Button variant="outline-info" size="sm" onClick={loadAllUsersFromApi}>
           Reload users data
         </Button>
+      </div>
+      <div style={{ marginTop: "20px" }}>
+        <UsersTable users={users}></UsersTable>
       </div>
     </Container>
   );

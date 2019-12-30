@@ -31,7 +31,6 @@ const StyledNav = styled.nav`
   & a {
     padding: 0 8px;
     display: inline-block;
-    color: #888 !important;
     font-size: 0.85rem;
     font-weight: 500;
   }
