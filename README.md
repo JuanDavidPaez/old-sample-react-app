@@ -40,6 +40,12 @@ npm install react-router-dom
 npm install @types/react-router-dom
 ```
 
+#### Axios [link](https://github.com/axios/axios)
+
+```
+npm install axios
+```
+
 ## Setup and useful commands
 
 #### Create app
