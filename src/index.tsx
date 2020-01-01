@@ -2,17 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import { HashRouter } from "react-router-dom";
+import { NotificationContainer } from "react-notifications";
 
 import "react-app-polyfill/ie9";
 import "react-app-polyfill/ie11";
 import "bootstrap/dist/css/bootstrap.css";
 
+import "react-notifications/lib/notifications.css";
 import "./index.css";
 import App from "./App";
 
 ReactDOM.render(
   <HashRouter>
     <App />
+    <NotificationContainer />
   </HashRouter>,
   document.getElementById("root")
 );

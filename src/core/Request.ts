@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import { NotificationManager } from "react-notifications";
 
 class Request {
   private _loaderHtml?: HTMLDivElement;
@@ -50,6 +51,7 @@ class Request {
         return response.data;
       })
       .catch(error => {
+        NotificationManager.error("Ha ocurrido un error", null, 10000);
         return Promise.reject(error);
       })
       .finally(() => {

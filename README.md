@@ -46,6 +46,12 @@ npm install @types/react-router-dom
 npm install axios
 ```
 
+#### React notifications [link](https://www.npmjs.com/package/react-notifications)
+
+```
+npm install react-notifications
+```
+
 ## Setup and useful commands
 
 #### Create app
