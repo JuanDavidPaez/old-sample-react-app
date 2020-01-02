@@ -52,6 +52,12 @@ npm install axios
 npm install react-notifications
 ```
 
+#### Jest [link](https://jestjs.io/)
+
+```
+npm install --save-dev jest
+```
+
 ## Setup and useful commands
 
 #### Create app
